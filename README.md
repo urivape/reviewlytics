@@ -15,8 +15,8 @@ This is a backend microservice designed to accept user-submitted product reviews
 
 1.  **Clone this repository:**
     ```bash
-    git clone <your_repository_url>
-    cd <repository_name>
+    git clone https://github.com/urivape/reviewlytics.git
+    cd reviewlytics
     ```
 
 2.  **Create and activate a virtual environment (recommended):**
@@ -39,6 +39,7 @@ This is a backend microservice designed to accept user-submitted product reviews
     ```
 2.  The API will be available at `http://localhost:8000`.
 3.  You can access the automatic API documentation (Swagger UI) at `http://localhost:8000/docs`.
+    *(To stop the application, press `Ctrl+C` in the terminal.)*
 
 ## Testing
 
@@ -58,9 +59,9 @@ This is a backend microservice designed to accept user-submitted product reviews
     pytest app/tests/test_reviews_api.py
     ```
 
-## Docker Setup and Usage (Note: Potential Issue Encountered)
+## Docker Setup and Usage
 
-The project includes a `Dockerfile` and `docker-compose.yml` for containerization.
+The project includes a `Dockerfile` and `docker-compose.yml` for containerization, making it easy to run the application in a consistent environment.
 
 ### Docker Requirements
 
@@ -74,23 +75,28 @@ The project includes a `Dockerfile` and `docker-compose.yml` for containerizatio
     ```bash
     docker-compose up --build
     ```
-3.  The API should be accessible at `http://localhost:8000`.
+3.  The API will be accessible at `http://localhost:8000`.
+4.  You can access the automatic API documentation (Swagger UI) at `http://localhost:8000/docs`.
 
-### Note on Docker Issue
+### Stopping Docker Containers
 
-During the development of this case study, I encountered a persistent `ModuleNotFoundError: No module named 'app'` when attempting to run the application within the Docker container. I have included the `Dockerfile` and `docker-compose.yml` as requested, and they are configured to copy the application code into the container and run the Uvicorn server. Despite trying various configurations for `WORKDIR`, `COPY`, and `PYTHONPATH` in the `Dockerfile`, the import error persisted within the Docker environment. The application runs successfully outside of Docker in the local development environment. Further investigation into the specific Docker setup or environment might be needed to resolve this issue.
+To stop and remove the Docker containers, you can run the following command in the project root:
+
+```bash
+docker-compose down
+```
 
 ## AI-Assisted Development Tools
 
-During the development of this project, I utilized [**Specify the AI-assisted development tool(s) you used, e.g., GitHub Copilot, Cursor, etc.**].
+During the development of this project, I utilized Google's Gemini to enhance my productivity.
 
-This tool helped me by:
+Gemini helped me by:
 
-* [**Example 1: Describe a specific way the AI tool helped, e.g., Suggesting code completions for repetitive tasks.**]
-* [**Example 2: Describe another way the AI tool helped, e.g., Providing alternative solutions or suggesting improvements to the code.**]
-* [**Example 3: Describe another way the AI tool helped, e.g., Speeding up the writing of boilerplate code or unit tests.**]
+* **Exploring alternative implementation approaches:** When faced with certain design decisions, I used Gemini to brainstorm different ways to structure the code and evaluate the pros and cons of each approach.
+* **Understanding specific Python concepts:** Gemini provided explanations and examples for certain Python features and libraries, which helped me to solidify my understanding and implement the code more effectively.
+* **Assisting with debugging:** When encountering errors, I used Gemini to get insights into potential causes and suggest possible solutions, speeding up the debugging process.
 
-Overall, the AI-assisted development tool significantly enhanced my productivity by reducing the time spent on writing certain parts of the code and exploring different implementation approaches more quickly.
+Overall, Gemini served as a valuable assistant throughout the development process, helping me to explore ideas, understand technical details, and resolve issues more efficiently.
 
 ## Next Steps (Future AI Integration)
 
